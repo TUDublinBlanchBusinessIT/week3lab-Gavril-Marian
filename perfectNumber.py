@@ -1,6 +1,8 @@
-#Add your name here
-#Add the date here
-#Add the filename here
+# Gavril Marian
+#17/02/2025
+# A program that checks if number is a perfect number
+from divisors import divisors
+def perfectNumber(number):
 
 #A perfect number is one for which all the divisors of the number add up to the
 #number itself. For example the divisors of 28 are 1,2,4,7,14 which added together gives 28
@@ -14,16 +16,22 @@
 
 
     #set a result variable to False by default
-
+    perfectNumber=False
 
     #if the sum of all the divisors of the number is equal to the test number
+    my_list=[]
+    my_list=divisors(number)
+    sum=0
+    for i in range(len(my_list)):
+        sum=sum+my_list[i]
+    if (sum == number):
+        perfectNumber = True
+    return perfectNumber
+    
 
-        #set the result variable to be True
- 
 
-    #return the result variable
-
-
-#uncomment the following line to test the perfectNumber function it should return True
-#if (perfectNumber(8128)): print("8128 is a perfect number")
+def main():
+    if (perfectNumber(8128)):
+        print("8128 is a perfect number")
+main()
 
